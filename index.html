@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Password Security Analyzer
+    </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Security Analyzer</h1>
+        <p>Check your password strength and generate a secure password.</p>
+        <div class="row">
+            <input type="password" id="password" placeholder="Enter your password" autocomplete="off">
+            <button id="toggle">Show</button>
+        </div>
+        <div class="bar">
+            <div id="barFill"></div>
+        </div>
+        <p id="strengthText">Strength: -</p>
+        <p id="entropyText"></p>
+        <p id="warningText"></p>
+        <ul id="rules">
+          <li id="r-length">At least 8 characters</li>
+          <li id="r-upper">One capital letter (A-Z)</li>
+          <li id="r-lower">One small letter (a-z)</li>
+          <li id="r-number">One number (0-9)</li>
+         <li id="r-symbol">One special character (@, #, $ ...)</li>
+        </ul>
+        <h2>Password Generator</h2>
+
+        <label for="length">Length: <span id="lenVal">12</span></label>
+        <input type="range" id="length" min="8" max="32" value="12">
+
+        <div class="options">
+           <label><input type="checkbox" id="upper" checked> Capital (A-Z)</label>
+           <label><input type="checkbox" id="numbers" checked> Numbers (0-9)</label>
+           <label><input type="checkbox" id="symbols" checked> Symbols (@#$)</label>
+        </div>
+
+        <button id="generate">Generate Password</button>
+
+        <div class="row">
+           <input type="text" id="generated" readonly placeholder="Your password will appear here">
+           <button id="copy">Copy</button>
+           <button id="check">Check</button>
+        </div>
+        <p class="note">🔒 Your password never leaves your browser. Nothing is stored or sent anywhere.</p>
+    </div>
+        <script src="script.js"></script>
+</body>
+</html>
